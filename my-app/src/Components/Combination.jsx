@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaAngleRight } from "react-icons/fa6";
-import { AiOutlineDelete } from "react-icons/ai";
-import { ToggleSlider }  from "react-toggle-slider";
+
 import { Link } from 'react-router-dom';
 
 const Combination = () => {
