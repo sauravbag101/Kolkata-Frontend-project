@@ -15,6 +15,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['react-toggle-slider'],
+      external: ['react-dom/client']
     },
   },
 });

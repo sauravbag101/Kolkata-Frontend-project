@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { FaAngleRight } from "react-icons/fa6";
 import { AiOutlineDelete } from "react-icons/ai";
-import { ToggleSlider }  from "react-toggle-slider";
+// import { ToggleSlider }  from "react-toggle-slider";
+import Switch from "react-switch";
+
 import { Link } from 'react-router-dom';
 
 const ShowModal = () => {
@@ -121,17 +123,18 @@ const ShowModal = () => {
               className={`border p-2 rounded-md ${hasDuplicateSku(combination.sku) ? 'border-red-500' : 'border-gray-300'}`}
             />
             <div>
-              <label className="inline-flex items-center">
-              <ToggleSlider
-          barHeight={30}
-          handleSize={25} 
-          active={combination.inStock} 
-          onToggle={() => handleStockChange(combination.id)} 
-          barBackgroundColorActive="#000000"
-          barBackgroundColorInactive="#ddd" 
+      <label className="inline-flex items-center">
+        <Switch
+          onChange={() => handleStockChange(combination.id)}
+          checked={combination.inStock}
+          height={30}  // Same as barHeight
+          width={60}   // You can adjust this as per your design
+          handleDiameter={25}  // Same as handleSize
+          offColor="#ddd"
+          onColor="#000000"
         />
-              </label>
-            </div>
+      </label>
+    </div>
             <input
               type="number"
               value={combination.quantity}
